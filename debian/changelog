@@ -1,0 +1,5 @@
+todo.txt-base (1.0) UNRELEASED; urgency=medium
+
+  * Initial release (Closes: #973903).
+
+ -- David Steele <steele@debian.org>  Fri, 06 Nov 2020 10:25:01 -0500

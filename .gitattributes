@@ -1,0 +1,2 @@
+debian export-ignore
+todo_txt_base/__pycache__ export-ignore
