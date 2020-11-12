@@ -1,6 +1,0 @@
-[console_scripts]
-edittodo = todo_txt_base.todo_txt_base.edit_todo
-listtodo = todo_txt_base.todo_txt_base.list_todo
-todo = todo_txt_base.todo_txt_base.execute_todo
-vitodo = todo_txt_base.todo_txt_base.vi_todo
-

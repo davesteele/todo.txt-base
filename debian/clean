@@ -5,3 +5,4 @@ debian/vitodo.8
 debian/edittodo.8
 debian/listtodo.8
 debian/todo.8
+debian/txt-base.substvars
