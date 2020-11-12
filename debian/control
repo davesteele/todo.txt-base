@@ -2,7 +2,12 @@ Source: todo.txt-base
 Section: text
 Priority: optional
 Maintainer: David Steele <steele@debian.org>
-Build-Depends: debhelper-compat (= 13), dh-python, python3-all, python3-setuptools
+Build-Depends:
+    debhelper-compat (= 13),
+    dh-python,
+    python3-all,
+    python3-setuptools,
+    pandoc,
 Standards-Version: 4.1.3
 Rules-Requires-Root: no
 Homepage: https://github.com/davesteele/todo.txt-base
