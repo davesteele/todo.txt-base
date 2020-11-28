@@ -1,20 +1,25 @@
-% todo(8)
+% todo.txt-base(8)
 %
 % November 2020
 
 # NAME
 
-todo -- A wrapper utilty for todo.txt
+todo.txt-base -- Extension support for todo.txt packages
 
 ## SYNOPSIS
 
-`todo \<arguments\>`
+`todo.txt-base {pre|post} <taskfile>`
 
 ## DESCRIPTION
 
-This utility acts as a wrapper for _todo.txt_. The _todo.txt-base_ _post_ hooks are called after.
+This command adds extension hook support to _todo.txt_ applications.
 
-The _\<arguments\>_ are passed to _todo.txt_.
+With the _pre_ argument, scripts found in the _/etc/todo.txt-base/prehooks/_
+directory are run. With the _post_ argument, scripts found in the
+_/etc/todo.txt-base/posthooks/_ directory are run. Scripts are run in
+alphabetical order. Each script is given a single argument with the full path
+to the todo.txt tasking file.
 
 ## SEE ALSO
-todo.txt-base(8), vitodo(8), edittodo(8), listtodo(8), todo.txt-base(5), todo.txt-helper(8)
+
+vitodo(8), edittodo(8), listtodo(8), todo(8), todo.txt(8)

@@ -1,3 +1,13 @@
+todo.txt-base (2.0) UNRELEASED; urgency=medium
+
+  * Update to new output requirement for todo.txt-helper.
+    - Debian-specific topydo wrapper which:
+      - Calls todo.txt pre and post hooks as needed.
+      - Adds an --info argument to provide config info to todo.txt-base.
+    - todo.txt demoted to Recommends. Topydo works without it.
+
+ -- David Steele <dsteele@gmail.com>  Sat, 21 Nov 2020 13:30:36 -0500
+
 todo.txt-base (1.1) unstable; urgency=medium
 
   * Resubmit with source-only

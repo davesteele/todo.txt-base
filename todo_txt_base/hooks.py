@@ -3,16 +3,18 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # License-Filename: LICENSE
 
+import sys
 from functools import wraps
 from pathlib import Path
 from subprocess import run
+
+from todo_txt_base.tconfig import get_var, TDTBaseException
 
 PRE_HOOK_DIR = "/etc/todo.txt-base/prehooks"
 POST_HOOK_DIR = "/etc/todo.txt-base/posthooks"
 
 
-def run_hooks(dir):
-    print("Running hooks on %s" % dir)
+def run_hooks(dir, task_path):
     dir_path = Path(dir)
 
     script_paths = [x for x in dir_path.iterdir() if x.is_file]
@@ -21,23 +23,36 @@ def run_hooks(dir):
 
     for script in scripts:
         print(script)
-        run([script])
+        run([script, task_path])
 
 
 def prehook(fn):
     @wraps(fn)
-    def wrapper(*args, **kwargs):
-        run_hooks(PRE_HOOK_DIR)
-        return fn(*args, **kwargs)
+    def wrapper(exe_path, task_path, *args, **kwargs):
+        run_hooks(PRE_HOOK_DIR, task_path)
+        return fn(exe_path, task_path, *args, **kwargs)
 
-    return fn
+    return wrapper
 
 
 def posthook(fn):
     @wraps(fn)
-    def wrapper(*args, **kwargs):
-        returnval = fn(*args, **kwargs)
-        run_hooks(POST_HOOK_DIR)
+    def wrapper(exe_path, task_path, *args, **kwargs):
+        returnval = fn(exe_path, task_path, *args, **kwargs)
+        run_hooks(POST_HOOK_DIR, task_path)
         return returnval
 
-    return fn
+    return wrapper
+
+
+def tdtwrapper(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        try:
+            task_path = get_var("task_path")
+            exe_path = get_var("executable")
+            return fn(exe_path, task_path, *args, **kwargs)
+        except TDTBaseException:
+            sys.exit(1)
+
+    return wrapper

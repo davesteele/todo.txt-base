@@ -7,52 +7,37 @@
 
 import sys
 from pathlib import Path
-from subprocess import run, PIPE
+from subprocess import run
 
 import todo_txt_base.tdtlist as tdtlist
-from todo_txt_base.hooks import posthook, prehook
+from todo_txt_base.hooks import posthook, prehook, tdtwrapper, run_hooks
 
 
-def run_todo(argarray):
-    run(argarray)
-
-def get_todo_path():
-    cp = run(
-        "todo.txt-helper todofile".split(),
-        encoding="utf-8",
-        stdout=PIPE,
-    )
-    path = Path(cp.stdout.strip())
-    return str(path.expanduser())
-
-
+@tdtwrapper
 @prehook
 @posthook
-def vi_todo():
-    todo_path = get_todo_path()
-    run_todo(["vi", todo_path])
+def vi_todo(exe_path, task_path):
+    run(["vi", task_path])
 
 
+@tdtwrapper
 @prehook
 @posthook
-def edit_todo():
-    todo_path = get_todo_path()
-    run_todo(["editor", todo_path])
+def edit_todo(exe_path, task_path):
+    run(["editor", task_path])
 
 
+@tdtwrapper
+def execute_todo(exe_path, task_path):
+    phase = sys.argv[1]
+    if phase in ["pre", "post"]:
+        textfile = sys.argv[2]
+        dir = Path("/etc/todo.txt-base/{}hooks/".format(phase))
+        run_hooks(str(dir), task_path)
+
+
+@tdtwrapper
 @prehook
-@posthook
-def execute_todo():
-    run_todo(["todo.txt"] + sys.argv[1:])
-
-
-def list_todo():
-    todo_path = get_todo_path()
-    sys.argv = ["listtodo", "-f", todo_path] + sys.argv[1:]
+def list_todo(exe_path, task_path):
+    sys.argv = ["listtodo", "-f", task_path] + sys.argv[1:]
     tdtlist.main()
-
-
-def main():
-    print("Hello World")
-    print(get_todo_path())
-    print(sys.argv)

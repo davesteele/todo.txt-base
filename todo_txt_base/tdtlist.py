@@ -98,13 +98,6 @@ def parse_args():
         help="search terms to filter the reported tasks",
     )
 
-#     parser.add_argument(
-#         "-l",
-#         "--launch",
-#         action="store_true",
-#         help="open a transient version of the task list",
-#     )
-
     parser.add_argument(
         "-p",
         "--priority",
@@ -195,7 +188,14 @@ def list_tasks(
 
     if launch:
         with nullfd(1), nullfd(2):
-            subprocess.call(["xdg-open", odt_file])
+            subprocess.Popen(
+                ["xdg-open", odt_file],
+                shell=False,
+                stdin=None,
+                stdout=None,
+                stderr=None,
+                close_fds=True,
+            )
 
 
 def tempdir():
@@ -209,13 +209,9 @@ def tempdir():
 def main():
     args = parse_args()
 
-    if True:
-    #if args.launch:
-        docdir = tempfile.mkdtemp(dir=tempdir())
-    else:
-        docdir = os.path.dirname(args.file)
+    docdir = tempfile.mkdtemp(dir=tempdir())
 
-    list_tasks(args.file, docdir, args.terms, args.priority, args.launch)
+    list_tasks(args.file, docdir, args.terms, args.priority, True)
 
 
 if __name__ == "__main__":

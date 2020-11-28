@@ -21,9 +21,9 @@ _/etc/todo.txt-base/prehooks_. Scripts run after processing are stored in
 _/etc/todo.txt-base/posthooks_. All scripts are run with a single argument
 defining the location of the todo.txt tasking file.
 
-The todo.txt utility _todo.txt-helper_ is used to determine the location of the
-todo.txt tasking file.
+The location of the todo.txt tasking file is determined by running "todo.txt
+--info".
 
 ## SEE ALSO
-todo.txt-base(8), todo(8), edittodo(8), listtodo(8), todo.txt(8),
-todo.txt-helper(8)
+
+todo.txt-base(8), vitodo(8), listtodo(8), todo(8), todo.txt(8)

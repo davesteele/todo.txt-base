@@ -24,7 +24,9 @@ setup(
                 "listtodo=todo_txt_base.entry_points:list_todo",
             ],
     },
+    setup_requires=["pytest-runner"],
     install_requires=["relatorio"],
+    tests_require=["pytest"],
     classifiers=[
         "Environment :: Console",
         "Intended Audience :: End Users/Desktop",
