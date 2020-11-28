@@ -7,6 +7,7 @@ Build-Depends:
     dh-python,
     python3-all,
     python3-setuptools,
+    python3-pytest-runner,
     pandoc,
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
