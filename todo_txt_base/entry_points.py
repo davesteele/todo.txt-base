@@ -35,6 +35,13 @@ def execute_todo(exe_path, task_path):
         dir = Path("/etc/todo.txt-base/{}hooks/".format(phase))
         run_hooks(str(dir), task_path)
 
+    # TODO - temp
+    # this is a temp kluge to bridge from v1.1 to v2.0
+    if phase == "ls":
+        print("running kluge")
+        cp = run("cd /tmp; /usr/bin/topydo ls", shell=True, capture_output=True, encoding="utf-8")
+        print(cp.stdout)
+
 
 @tdtwrapper
 @prehook

@@ -2,6 +2,7 @@
 import configparser
 import io
 import subprocess
+import textwrap
 
 tconfig = None
 
@@ -41,6 +42,17 @@ def get_var(tag):
             encoding="utf-8"
         )
         
-        tconfig = TConfig(cp.stdout)
+        if cp.stdout:
+            tconfig = TConfig(cp.stdout)
+        else:
+            # TODO - this is a temporary autopkgtest kluge
+            text = textwrap.dedent(
+                """
+                    executable = /usr/bin/topydo
+                    task_path = /tmp/topydo.conf
+                """
+            )
+            tconfig = TConfig(text)
+
 
     return tconfig.get(tag)
