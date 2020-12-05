@@ -29,6 +29,8 @@ class TConfig(object):
         except configparser.NoOptionError:
             raise TDTBaseException("Option not found: " + tag)
 
+        val = val.strip(" \n\"'")
+
         return val
 
 
