@@ -9,7 +9,7 @@ Build-Depends:
     python3-setuptools,
     python3-pytest-runner,
     pandoc,
-Standards-Version: 4.5.0
+Standards-Version: 4.5.1
 Rules-Requires-Root: no
 Homepage: https://github.com/davesteele/todo.txt-base
 Vcs-Browser: https://github.com/davesteele/todo.txt-base
