@@ -21,7 +21,7 @@ _/etc/todo.txt-base/posthooks_. All scripts are run with a single argument
 defining the location of the todo.txt tasking file.
 
 The location of the todo.txt tasking file is determined by running "todo.txt
---info".
+\-\-info".
 
 ## SEE ALSO
 
