@@ -10,6 +10,7 @@ from pathlib import Path
 from subprocess import run
 
 import todo_txt_base.tdtlist as tdtlist
+import todo_txt_base.tdtbackup as tdtbackup
 from todo_txt_base.hooks import posthook, prehook, tdtwrapper, run_hooks
 
 
@@ -48,3 +49,11 @@ def execute_todo(exe_path, task_path):
 def list_todo(exe_path, task_path):
     sys.argv = ["listtodo", "-f", task_path] + sys.argv[1:]
     tdtlist.main()
+
+
+@tdtwrapper
+def backup_todo(exe_path, task_path):
+    backup_path = Path(task_path).parent / "backup"
+    sys.argv =
+        ["backuptodo", "-f", task_path, "-b", str(backup_path)] + sys.argv[1:]
+    tdtbackup.main()

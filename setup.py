@@ -22,6 +22,7 @@ setup(
                 "vitodo=todo_txt_base.entry_points:vi_todo",
                 "edittodo=todo_txt_base.entry_points:edit_todo",
                 "listtodo=todo_txt_base.entry_points:list_todo",
+                "backuptodo=todo_txt_base.entry_points:backup_todo",
             ],
     },
     setup_requires=["pytest-runner"],
