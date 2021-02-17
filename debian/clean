@@ -1,8 +1,8 @@
 todo_txt_base/__pycache__/
 debian/todo.txt-base.8
 debian/todo.txt-base.5
-debian/vitodo.8
-debian/edittodo.8
-debian/listtodo.8
+debian/vitodo.1
+debian/edittodo.1
+debian/listtodo.1
 debian/todo.8
 debian/txt-base.substvars

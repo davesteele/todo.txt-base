@@ -1,4 +1,4 @@
-% listtodo(8)
+% listtodo(1)
 %
 % November 2020
 
@@ -25,4 +25,4 @@ The default location of the todo.txt tasking file is determined by running
   * _-p \<PRIORITY\>_ - Only show tasks with priority _\<PRIORITY\>_ or higher
 
 ## SEE ALSO
-todo.txt-base(8), edittodo(8), vitodo(8), todo(8), todo.txt(8)
+todo.txt-base(8), edittodo(1), vitodo(1), listtodo(1), todo.txt(1)

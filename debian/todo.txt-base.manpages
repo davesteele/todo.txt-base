@@ -1,4 +1,4 @@
 debian/todo.txt-base.8
-debian/vitodo.8
-debian/edittodo.8
-debian/listtodo.8
+debian/vitodo.1
+debian/edittodo.1
+debian/listtodo.1
