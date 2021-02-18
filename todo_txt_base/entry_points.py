@@ -54,6 +54,5 @@ def list_todo(exe_path, task_path):
 @tdtwrapper
 def backup_todo(exe_path, task_path):
     backup_path = Path(task_path).parent / "backup"
-    sys.argv =
-        ["backuptodo", "-f", task_path, "-b", str(backup_path)] + sys.argv[1:]
+    sys.argv = ["backuptodo", "-f", task_path, "-b", str(backup_path)] + sys.argv[1:]
     tdtbackup.main()
