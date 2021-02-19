@@ -22,7 +22,6 @@ def run_hooks(dir, task_path):
     scripts = sorted([str(x) for x in script_paths])
 
     for script in scripts:
-        print(script)
         run([script, task_path])
 
 
