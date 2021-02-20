@@ -16,3 +16,9 @@ override_dh_auto_build:
 	  pandoc $$mn.md -s -t man -o $$mn; \
 	  sed -i 's/\\\[en\]/\\\-/' $$mn; \
 	done
+
+override_dh_auto_install:
+	dh_auto_install
+	for cmd in todo.txt-base vitodo edittodo listtodo backuptodo ; do \
+	  cp debian/$$cmd.launch debian/todo.txt-base/usr/share/todo.txt-base/$$cmd ; \
+	done
