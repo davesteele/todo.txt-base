@@ -1,3 +1,11 @@
+todo.txt-base (2.3) unstable; urgency=medium
+
+  * Speed-up application launch.
+  * Add backuptodo to this package.
+  * Fix man pages.
+
+ -- David Steele <steele@debian.org>  Fri, 19 Feb 2021 21:58:40 -0500
+
 todo.txt-base (2.2) unstable; urgency=medium
 
   * Update tests to remove references to 'todo'.
