@@ -1,3 +1,9 @@
+todo.txt-base (2.4) UNRELEASED; urgency=medium
+
+  * Add dependency to configargparse (Closes: #989156).
+
+ -- David Steele <steele@debian.org>  Fri, 28 May 2021 12:17:24 -0400
+
 todo.txt-base (2.3) unstable; urgency=medium
 
   * Speed-up application launch.
