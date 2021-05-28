@@ -26,7 +26,7 @@ setup(
             ],
     },
     setup_requires=["pytest-runner"],
-    install_requires=["relatorio"],
+    install_requires=["relatorio", "ConfigArgParse"],
     tests_require=["pytest"],
     classifiers=[
         "Environment :: Console",
