@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fp:
 
 setup(
     name="todo_txt_base",
-    version="1.0",
+    version="2.4",
     description="foo",
     url="https://example.com",
     author="David Steele",
