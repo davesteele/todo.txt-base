@@ -5,6 +5,7 @@
 # License-Filename: LICENSE
 
 
+import os
 import sys
 from pathlib import Path
 from subprocess import run
@@ -49,3 +50,11 @@ def backup_todo(exe_path, task_path):
     backup_path = Path(task_path).parent / "backup"
     sys.argv = ["backuptodo", "-f", task_path, "-b", str(backup_path)] + sys.argv[1:]
     tdtbackup.main()
+
+
+@tdtwrapper
+def cd_todo(exe_path, task_path):
+    task_dir_path = Path(task_path).parent
+    shell_path = os.getenv("SHELL")
+    os.chdir(str(task_dir_path))
+    run(shell_path)

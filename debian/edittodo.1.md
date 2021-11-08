@@ -1,6 +1,6 @@
 % edittodo(1)
 %
-% November 2020
+% November 2021
 
 # NAME
 
@@ -26,4 +26,4 @@ The location of the todo.txt tasking file is determined by running "todo.txt
 
 ## SEE ALSO
 
-todo.txt-base(8), vitodo(1), listtodo(1), edittodo(1), todo.txt(1)
+todo.txt-base(8), vitodo(1), listtodo(1), edittodo(1), todo.txt(1), cdtodo(1)
