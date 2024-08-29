@@ -106,6 +106,13 @@ def parse_args():
         help="Minimum priority to display",
     )
 
+    parser.add_argument(
+        "-t",
+        "--text_output",
+        action="store_true",
+        help="Output to stdout",
+    )
+
     args = parser.parse_args()
 
     return args
@@ -129,7 +136,7 @@ class tdline:
 
 
 def list_tasks(
-    infile: str, outdir: str, terms: List[str], priority: str, launch: bool
+    infile: str, outdir: str, terms: List[str], priority: str, textout: bool
 ):
     with open(infile, "r", encoding="utf-8") as fp:
         tdlines = [tdline(*x) for x in enumerate(fp.read().splitlines())]
@@ -186,7 +193,11 @@ def list_tasks(
     with open(odt_file, "wb") as fp:
         fp.write(basic_generated.getvalue())
 
-    if launch:
+    if textout:
+        txtPath = Path(txt_file)
+        print(txtPath.read_text())
+
+    else:
         with nullfd(1), nullfd(2):
             subprocess.Popen(
                 ["xdg-open", odt_file],
@@ -211,7 +222,7 @@ def main():
 
     docdir = tempfile.mkdtemp(dir=tempdir())
 
-    list_tasks(args.file, docdir, args.terms, args.priority, True)
+    list_tasks(args.file, docdir, args.terms, args.priority, args.text_output)
 
 
 if __name__ == "__main__":

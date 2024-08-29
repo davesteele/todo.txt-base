@@ -1,6 +1,6 @@
 % listtodo(1)
 %
-% November 2021
+% August 2024
 
 # NAME
 
@@ -23,6 +23,7 @@ The default location of the todo.txt tasking file is determined by running
   * _-h_, _\-\-help_ - Print help and exit
   * _-f \<FILE>\>_ - Use _\<FILE\>_ as the tasking file
   * _-p \<PRIORITY\>_ - Only show tasks with priority _\<PRIORITY\>_ or higher
+  * _-t_ - Output the tasks to STDOUT
 
 ## SEE ALSO
 todo.txt-base(8), edittodo(1), vitodo(1), listtodo(1), todo.txt(1), cdtodo(1)
