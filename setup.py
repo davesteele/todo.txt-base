@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 with open("README.md", "r", encoding="utf-8") as fp:
     longtext = fp.read()
@@ -12,7 +12,7 @@ setup(
     url="https://example.com",
     author="David Steele",
     author_email="steele@debian.org",
-    packages=find_packages(),
+    packages=["todo_txt_base"],
     long_description=longtext,
     long_description_content_type="text/markdown",
     package_data={"": ["*.odt"]},
