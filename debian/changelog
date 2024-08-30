@@ -3,7 +3,7 @@ todo.txt-base (2.5) UNRELEASED; urgency=medium
   * Add cdtodo command.
   * Change LibreOffice Writer from Recommends to Suggests
     (Closes: #1078146).
-  * Add text ouput option to listtodo
+  * Add text output option to listtodo
 
  -- David Steele <steele@debian.org>  Sun, 11 Aug 2024 09:49:07 -0400
 
