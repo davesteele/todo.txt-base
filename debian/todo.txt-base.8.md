@@ -1,6 +1,6 @@
 % todo.txt-base(8)
 %
-% November 2021
+% August 2024
 
 # NAME
 
@@ -22,4 +22,4 @@ to the todo.txt tasking file.
 
 ## SEE ALSO
 
-vitodo(1), edittodo(1), listtodo(1), todo.txt(1), cdtodo(1)
+vitodo(1), edittodo(1), listtodo(1), todo.txt(1), cdtodo(1), backuptodo(1)

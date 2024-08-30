@@ -6,4 +6,5 @@ debian/edittodo.1
 debian/listtodo.1
 debian/cdtodo.1
 debian/todo.8
+debian/backuptodo.1
 debian/txt-base.substvars

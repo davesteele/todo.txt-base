@@ -2,3 +2,4 @@ debian/todo.txt-base.8
 debian/vitodo.1
 debian/edittodo.1
 debian/listtodo.1
+debian/backuptodo.1
