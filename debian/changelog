@@ -1,3 +1,9 @@
+todo.txt-base (2.5.1) unstable; urgency=medium
+
+  * Fix build dependencies.
+
+ -- David Steele <steele@debian.org>  Sat, 31 Aug 2024 18:37:48 -0400
+
 todo.txt-base (2.5) unstable; urgency=medium
 
   * Add cdtodo command.
