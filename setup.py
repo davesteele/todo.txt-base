@@ -28,7 +28,7 @@ setup(
     },
     setup_requires=["pytest-runner"],
     install_requires=["relatorio", "ConfigArgParse"],
-    tests_require=["pytest", "mock"],
+    tests_require=["pytest"],
     classifiers=[
         "Environment :: Console",
         "Intended Audience :: End Users/Desktop",
