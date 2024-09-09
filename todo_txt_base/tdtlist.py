@@ -212,8 +212,10 @@ def list_tasks(
 def tempdir():
     dirname = "tdtlist-{}".format(pwd.getpwuid(os.getuid())[0])
     tempdir = os.path.join(tempfile.gettempdir(), dirname)
-    shutil.rmtree(tempdir, onerror=lambda x, y, z: None)
-    os.makedirs(tempdir)
+    try:
+        os.makedirs(tempdir)
+    except:
+        pass
     return tempdir
 
 
