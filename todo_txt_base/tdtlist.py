@@ -15,6 +15,7 @@ import shutil
 import subprocess
 import tempfile
 import textwrap
+import time
 from pathlib import Path
 from typing import List
 
@@ -219,12 +220,24 @@ def tempdir():
     return tempdir
 
 
+def trimtemp(tempdir, threshold=3600):
+    subdirpath = [Path(x) for x in os.listdir(tempdir) if Path(x).is_dir()]
+
+    tmpPath = Path(tempdir)
+    for subdirPath in tmpPath.iterdir():
+        age = time.time() - subdirPath.stat().st_mtime
+        if subdirPath.is_dir() and age > threshold:
+            shutil.rmtree(str(subdirPath.resolve()))
+
+
 def main():
     args = parse_args()
 
     docdir = tempfile.mkdtemp(dir=tempdir())
 
     list_tasks(args.file, docdir, args.terms, args.priority, args.text_output)
+
+    trimtemp(tempdir())
 
 
 if __name__ == "__main__":
