@@ -1,6 +1,44 @@
 [build-system]
-requires = ["setuptools", "wheel", "pytest-runner"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = true
+name = "todo_txt_base"
+version = "2.5"
+description = "Common support for todo.txt packages"
+license = "GPL-2.0-or-later"
+authors = [
+    "David Steele <steele@debian.org>",
+]
+readme = "README.md"
+homepage = "https://github.com/davesteele/todo.txt-base"
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+packages = [
+    {include = "todo_txt_base"},
+]
+include = ["template.odt"]
+
+[tool.poetry.scripts]
+todo-txt-base = "todo_txt_base.entry_points:execute_todo"
+vitodo = "todo_txt_base.entry_points:vi_todo"
+edittodo = "todo_txt_base.entry_points:edit_todo"
+listtodo = "todo_txt_base.entry_points:list_todo"
+backuptodo = "todo_txt_base.entry_points:backup_todo"
+cdtodo = "todo_txt_base.entry_points:cd_todo"
+
+[tool.poetry.dependencies]
+relatorio = "*"
+ConfigArgParse = "*"
+
+[tool.poetry.group.test.dependencies]
+pytest = "*"
 
 [tool.black]
 line-length = 79

@@ -19,6 +19,4 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 	dh_auto_install
-	for cmd in todo.txt-base vitodo edittodo listtodo backuptodo cdtodo ; do \
-	  cp debian/$$cmd.launch debian/todo.txt-base/usr/share/todo.txt-base/$$cmd ; \
-	done
+	(cd debian/todo.txt-base/usr/bin; mv todo-txt-base todo.txt-base)
