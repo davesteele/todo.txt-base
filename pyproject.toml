@@ -37,6 +37,9 @@ cdtodo = "todo_txt_base.entry_points:cd_todo"
 relatorio = "*"
 ConfigArgParse = "*"
 
+[tool.poetry.group.dev.dependencies]
+pytest="*"
+
 [tool.poetry.group.test.dependencies]
 pytest = "*"
 
@@ -45,3 +48,7 @@ line-length = 79
 
 [tool.isort]
 profile = "black"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
