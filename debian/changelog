@@ -1,3 +1,11 @@
+todo.txt-base (2.6) unstable; urgency=medium
+
+  * Hard code topydo as the todo.txt app.
+  * Use poetry for build.
+  * listtodp - lazy delete of temp files.
+
+ -- David Steele <steele@debian.org>  Thu, 16 Jan 2025 22:40:03 -0500
+
 todo.txt-base (2.5.1) unstable; urgency=medium
 
   * Fix build dependencies.
