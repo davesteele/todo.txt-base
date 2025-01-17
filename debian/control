@@ -19,7 +19,7 @@ Vcs-Git: https://github.com/davesteele/todo.txt-base.git
 
 Package: todo.txt-base
 Architecture: all
-Depends: ${python3:Depends}, ${misc:Depends}
+Depends: ${python3:Depends}, ${misc:Depends}, topydo
 Suggests: libreoffice-writer
 Description: Common support for todo.txt packages
  The Todo.txt project defines a format for supporting context-rich tasking in a

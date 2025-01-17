@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+
+import sys
+from pathlib import Path
+
+sys.path.insert(0, "/usr/share/topydo")
+
+from topydo_wrapper.topydo_wrapper import main as tpymain
+
+tpymain()
