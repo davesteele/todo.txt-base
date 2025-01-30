@@ -90,10 +90,22 @@ def backup(backupdir, filename, num):
 
     cleanup(backupdir, num)
 
+def backup_done(backupdir, todopath):
+    src = os.path.join(os.path.dirname(todopath), "done.txt")
+    dest = os.path.join(backupdir, "done.txt")
+
+    try:
+        with open(src, "r") as rp:
+            with open(dest, "w") as wp:
+                wp.write(rp.read())
+    except FileNotFoundError:
+        # this backup is best effort
+        pass
 
 def main():
     args = parse_args()
     backup(args.backupdir, args.file, args.num)
+    backup_done(args.backupdir, args.file)
 
 
 if __name__ == "__main__":
