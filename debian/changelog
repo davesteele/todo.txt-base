@@ -1,8 +1,9 @@
-todo.txt-base (2.7) UNRELEASED; urgency=medium
+todo.txt-base (2.7) unstable; urgency=medium
 
   * Update build for Debian stable bookworm.
+  * Add a best-effort backup of done.txt to backup.
 
- -- David Steele <steele@debian.org>  Tue, 01 Apr 2025 17:17:14 -0400
+ -- David Steele <steele@debian.org>  Tue, 01 Apr 2025 19:02:30 -0400
 
 todo.txt-base (2.6) unstable; urgency=medium
 
