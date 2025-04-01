@@ -4,6 +4,7 @@
 export PYBUILD_NAME=todo_txt_base
 export PYBUILD_INSTALL_ARGS=--install-lib=/usr/share/todo.txt-base\
     --install-scripts=/usr/share/todo.txt-base
+export PYBUILD_SYSTEM pyproject
 
 manpages = $(shell (ls debian/*.md | sed 's/.md//'))
 
