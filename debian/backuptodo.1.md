@@ -1,6 +1,6 @@
 % vitodo(1)
 %
-% August 2024
+% May 2026
 
 # NAME
 
@@ -31,5 +31,5 @@ defining the location of the todo.txt tasking file.
 
 ## SEE ALSO
 
-todo.txt-base(8), edittodo(1), listtodo(1), todo.txt(1), cdtodo(1), vitodo(1)
-
+todo.txt-base(8), edittodo(1), listtodo(1), todo.txt(1), cdtodo(1), vitodo(1),
+justone(1)

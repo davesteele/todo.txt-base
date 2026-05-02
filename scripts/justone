@@ -1,0 +1,3 @@
+#!/bin/bash
+
+todo.txt @ | grep -v "~" | grep -v "^#" | shuf --random-source=/dev/random | head -1

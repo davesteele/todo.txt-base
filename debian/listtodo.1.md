@@ -1,6 +1,6 @@
 % listtodo(1)
 %
-% August 2024
+% May 2026
 
 # NAME
 
@@ -26,4 +26,5 @@ The default location of the todo.txt tasking file is determined by running
   * _-t_ - Output the tasks to STDOUT
 
 ## SEE ALSO
-todo.txt-base(8), edittodo(1), vitodo(1), listtodo(1), todo.txt(1), cdtodo(1), backuptodo(1)
+todo.txt-base(8), edittodo(1), vitodo(1), listtodo(1), todo.txt(1), cdtodo(1),
+backuptodo(1), justone(1)
