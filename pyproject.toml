@@ -3,23 +3,23 @@ requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [project]
-name = "todo_txt_base"
+name = "todo-txt-base"
 version = "2.8"
 description = "Common support for todo.txt packages"
 readme = "README.md"
 requires-python = ">=3.10"
+license = "GPL-2.0-or-later"
 authors = [ { name = "David Steele", email = "steele@debian.org" } ]
 keywords = [ "utilities", "command-line", "todo", "todo list" ]
 classifiers = [
     "Environment :: Console",
     "Intended Audience :: End Users/Desktop",
-    "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
     "Programming Language :: Python :: 3",
     "Topic :: Utilities",
 ]
 dependencies = [
     "relatorio (>=0.11.0)",
-    "ConfigArgParse (>=1.7.1)",
+    "configargparse (>=1.7.1)",
 ]
 
 [project.optional-dependencies]
@@ -33,7 +33,6 @@ Changelog = "https://raw.githubusercontent.com/davesteele/todo.txt-base/refs/hea
 
 [tool.poetry]
 package-mode = true
-license = "GPL-2.0-or-later"
 authors = [
     "David Steele <steele@debian.org>",
 ]
