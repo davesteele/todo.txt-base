@@ -1,10 +1,10 @@
-todo.txt-base (2.8) UNRELEASED; urgency=medium
+todo.txt-base (2.8) unstable; urgency=medium
 
   * Add the "justone" command.
   * Rework pyproject.toml for Poetry 2.0.
   * Add a tdt alias for todo.txt.
 
- -- David Steele <steele@debian.org>  Mon, 20 Jul 2026 12:55:06 -0400
+ -- David Steele <steele@debian.org>  Mon, 20 Jul 2026 17:27:03 -0400
 
 todo.txt-base (2.7) unstable; urgency=medium
 
