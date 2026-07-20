@@ -22,3 +22,4 @@ override_dh_auto_install:
 	dh_auto_install
 	(cd debian/todo.txt-base/usr/bin; mv todo-txt-base todo.txt-base)
 	cp debian/todo.txt debian/todo.txt-base/usr/bin/
+	cp debian/todo.txt debian/todo.txt-base/usr/bin/tdt

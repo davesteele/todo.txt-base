@@ -1,6 +1,6 @@
 % vitodo(1)
 %
-% May 2026
+% July 2026
 
 # NAME
 
@@ -25,5 +25,5 @@ The location of the todo.txt tasking file is determined by running "todo.txt
 
 ## SEE ALSO
 
-todo.txt(1), todo.txt-base(8), edittodo(1), listtodo(1), todo.txt(1),
+todo.txt(1), tdt(1), todo.txt-base(8), edittodo(1), listtodo(1),
 cdtodo(1), backuptodo(1), justone(1)

@@ -1,6 +1,6 @@
 % todo.txt-base(8)
 %
-% May 2026
+% July 2026
 
 # NAME
 
@@ -22,5 +22,5 @@ to the todo.txt tasking file.
 
 ## SEE ALSO
 
-vitodo(1), edittodo(1), listtodo(1), todo.txt(1), cdtodo(1), backuptodo(1),
-justone(1)
+vitodo(1), edittodo(1), listtodo(1), todo.txt(1), tdt(1), cdtodo(1),
+backuptodo(1), justone(1)
