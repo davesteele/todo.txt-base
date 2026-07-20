@@ -1,18 +1,15 @@
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry]
-package-mode = true
+[project]
 name = "todo_txt_base"
 version = "2.8"
 description = "Common support for todo.txt packages"
-license = "GPL-2.0-or-later"
-authors = [
-    "David Steele <steele@debian.org>",
-]
 readme = "README.md"
-homepage = "https://github.com/davesteele/todo.txt-base"
+requires-python = ">=3.10"
+authors = [ { name = "David Steele", email = "steele@debian.org" } ]
+keywords = [ "utilities", "command-line", "todo", "todo list" ]
 classifiers = [
     "Environment :: Console",
     "Intended Audience :: End Users/Desktop",
@@ -20,12 +17,32 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Topic :: Utilities",
 ]
+dependencies = [
+    "relatorio (>=0.11.0)",
+    "ConfigArgParse (>=1.7.1)",
+]
+
+[project.optional-dependencies]
+test = [ "pytest" ]
+
+[project.urls]
+Homepage = "https://github.com/davesteele/todo.txt-base"
+Source = "https://github.com/davesteele/todo.txt-base.git"
+Issues = "https://github.com/davesteele/todo.txt-base/issues"
+Changelog = "https://raw.githubusercontent.com/davesteele/todo.txt-base/refs/heads/main/debian/changelog"
+
+[tool.poetry]
+package-mode = true
+license = "GPL-2.0-or-later"
+authors = [
+    "David Steele <steele@debian.org>",
+]
 packages = [
     {include = "todo_txt_base"},
 ]
 include = ["template.odt"]
 
-[tool.poetry.scripts]
+[project.scripts]
 todo-txt-base = "todo_txt_base.entry_points:execute_todo"
 vitodo = "todo_txt_base.entry_points:vi_todo"
 edittodo = "todo_txt_base.entry_points:edit_todo"
@@ -33,22 +50,17 @@ listtodo = "todo_txt_base.entry_points:list_todo"
 backuptodo = "todo_txt_base.entry_points:backup_todo"
 cdtodo = "todo_txt_base.entry_points:cd_todo"
 
-[tool.poetry.dependencies]
-relatorio = "*"
-ConfigArgParse = "*"
-
 [tool.poetry.group.dev.dependencies]
 pytest="*"
 
 [tool.poetry.group.test.dependencies]
 pytest = "*"
 
-[tool.black]
-line-length = 79
-
-[tool.isort]
-profile = "black"
-
 [tool.pytest.ini_options]
-asyncio_mode = "auto"
-asyncio_default_fixture_loop_scope = "function"
+addopts = "--import-mode=importlib"
+testpaths = [ "todo_txt_base", "test" ]
+pythonpath = [ ".", ]
+
+[tool.ruff]
+line-length = 79
+indent-width = 4

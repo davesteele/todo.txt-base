@@ -1,6 +1,7 @@
 todo.txt-base (2.8) UNRELEASED; urgency=medium
 
   * Add the "justone" command.
+  * Rework pyproject.toml for Poetry 2.0.
 
  -- David Steele <steele@debian.org>  Mon, 20 Jul 2026 12:55:06 -0400
 

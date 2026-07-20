@@ -9,7 +9,7 @@ Build-Depends:
     python3-setuptools,
     python3-pytest,
     python3-pytest-runner,
-    python3-poetry,
+    python3-poetry (>= 2.0),
     pybuild-plugin-pyproject,
     pandoc,
 Standards-Version: 4.5.1
