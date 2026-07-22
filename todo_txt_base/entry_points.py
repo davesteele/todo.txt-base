@@ -10,9 +10,9 @@ import sys
 from pathlib import Path
 from subprocess import run
 
-import todo_txt_base.tdtlist as tdtlist
 import todo_txt_base.tdtbackup as tdtbackup
-from todo_txt_base.hooks import posthook, prehook, tdtwrapper, run_hooks
+import todo_txt_base.tdtlist as tdtlist
+from todo_txt_base.hooks import posthook, prehook, run_hooks, tdtwrapper
 
 
 @tdtwrapper
@@ -33,7 +33,6 @@ def edit_todo(exe_path, task_path):
 def execute_todo(exe_path, task_path):
     phase = sys.argv[1]
     if phase in ["pre", "post"]:
-        textfile = sys.argv[2]
         dir = Path("/etc/todo.txt-base/{}hooks/".format(phase))
         run_hooks(str(dir), task_path)
 
@@ -48,7 +47,13 @@ def list_todo(exe_path, task_path):
 @tdtwrapper
 def backup_todo(exe_path, task_path):
     backup_path = Path(task_path).parent / "backup"
-    sys.argv = ["backuptodo", "-f", task_path, "-b", str(backup_path)] + sys.argv[1:]
+    sys.argv = [
+        "backuptodo",
+        "-f",
+        task_path,
+        "-b",
+        str(backup_path),
+    ] + sys.argv[1:]
     tdtbackup.main()
 
 

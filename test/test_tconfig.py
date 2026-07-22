@@ -1,6 +1,4 @@
-
 import textwrap
-import subprocess
 from unittest.mock import Mock
 
 import pytest
@@ -21,7 +19,7 @@ def config(monkeypatch):
     cpmock = Mock()
     cpmock.stdout = config_data
     runmock = Mock(return_value=cpmock)
-    monkeypatch.setattr(tconfig.subprocess,"run", runmock)
+    monkeypatch.setattr(tconfig.subprocess, "run", runmock)
 
     return None
 
@@ -33,4 +31,3 @@ def test_config_internal(config):
 def test_config_miss(config):
     with pytest.raises(tconfig.TDTBaseException):
         tconfig.get_var("bogus")
-

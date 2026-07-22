@@ -78,9 +78,7 @@ def parse_args():
             in text and LibreOffice formats. The lists are saved in the
             same directory as tasks.txt and tasks.odt. Optionally, the
             LibreOffice list can be automatically opened.
-            """[
-                1:-1
-            ]
+            """[1:-1]
         ),
     )
 
@@ -215,14 +213,12 @@ def tempdir():
     tempdir = os.path.join(tempfile.gettempdir(), dirname)
     try:
         os.makedirs(tempdir)
-    except:
+    except Exception:
         pass
     return tempdir
 
 
 def trimtemp(tempdir, threshold=3600):
-    subdirpath = [Path(x) for x in os.listdir(tempdir) if Path(x).is_dir()]
-
     tmpPath = Path(tempdir)
     for subdirPath in tmpPath.iterdir():
         age = time.time() - subdirPath.stat().st_mtime

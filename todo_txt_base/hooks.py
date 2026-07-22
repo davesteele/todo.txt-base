@@ -8,7 +8,7 @@ from functools import wraps
 from pathlib import Path
 from subprocess import run
 
-from todo_txt_base.tconfig import get_var, TDTBaseException
+from todo_txt_base.tconfig import TDTBaseException, get_var
 
 PRE_HOOK_DIR = "/etc/todo.txt-base/prehooks"
 POST_HOOK_DIR = "/etc/todo.txt-base/posthooks"

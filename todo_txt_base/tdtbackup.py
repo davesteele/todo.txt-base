@@ -90,6 +90,7 @@ def backup(backupdir, filename, num):
 
     cleanup(backupdir, num)
 
+
 def backup_done(backupdir, todopath):
     src = os.path.join(os.path.dirname(todopath), "done.txt")
     dest = os.path.join(backupdir, "done.txt")
@@ -101,6 +102,7 @@ def backup_done(backupdir, todopath):
     except FileNotFoundError:
         # this backup is best effort
         pass
+
 
 def main():
     args = parse_args()

@@ -1,8 +1,6 @@
-
 import configparser
 import io
 import subprocess
-import textwrap
 
 tconfig = None
 
@@ -12,7 +10,7 @@ class TDTBaseException(Exception):
 
 
 class TConfig(object):
-    def __init__(self, config_text, section='DEFAULT', defaults={}):
+    def __init__(self, config_text, section="DEFAULT", defaults={}):
         self._section = section
 
         self._config = configparser.ConfigParser(defaults=defaults)
@@ -39,13 +37,10 @@ def get_var(tag):
 
     if tconfig is None:
         cp = subprocess.run(
-            ["todo.txt", "--info"],
-            capture_output=True,
-            encoding="utf-8"
+            ["todo.txt", "--info"], capture_output=True, encoding="utf-8"
         )
-        
+
         if cp.stdout:
             tconfig = TConfig(cp.stdout)
-
 
     return tconfig.get(tag)
