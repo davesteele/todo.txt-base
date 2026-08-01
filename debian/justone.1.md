@@ -1,6 +1,6 @@
 % justone(1)
 %
-% July 2026
+% Aug 2027
 
 # NAME
 
@@ -8,7 +8,7 @@ justone -- Display a single random active todo.txt task
 
 ## SYNOPSIS
 
-`justone`
+justone \[ \<ARG\> ... \]
 
 ## DESCRIPTION
 
@@ -17,6 +17,9 @@ file.
 
 Tasks are identified as lines in the tasking file which contain a "@" symbol.
 Comment lines (lines containing a "#") are excluded.
+
+Arguments are passed on to the todo.txt command. They can be used to limit
+the pool of candidate tasks.
 
 The location of the todo.txt tasking file is determined by running "todo.txt
 \-\-info".
